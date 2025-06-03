@@ -1,0 +1,27 @@
+window.addEventListener("scroll", () => {
+  const links = document.querySelectorAll("nav a");
+  const fromTop = window.scrollY + 100;
+
+  links.forEach((link) => {
+    const section = document.querySelector(link.hash);
+    if (
+      section.offsetTop <= fromTop &&
+      section.offsetTop + section.offsetHeight > fromTop
+    ) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+
+  const backToTopBtn = document.getElementById("backToTop");
+  if (window.scrollY > 400) {
+    backToTopBtn.style.display = "flex";
+  } else {
+    backToTopBtn.style.display = "none";
+  }
+});
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}

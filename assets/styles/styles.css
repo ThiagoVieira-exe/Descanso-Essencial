@@ -18,17 +18,17 @@ header {
 nav {
   background: #357abd;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   padding: 1rem;
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
 }
 nav a {
   color: white;
-  margin: 0.5rem 1rem;
+  margin: 0 1.5rem;
   text-decoration: none;
   font-weight: bold;
   font-size: 1.1rem;
@@ -41,11 +41,7 @@ nav a.active {
 }
 header h1 {
   margin: 0;
-  font-size: 2.5rem;
-}
-header p {
-  font-size: 1.2rem;
-  margin-top: 1rem;
+  font-size: 3rem;
 }
 section {
   padding: 2.5rem 1rem;
@@ -63,7 +59,7 @@ section h2 {
 .tips,
 .data {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
   margin-top: 1rem;
 }
@@ -93,10 +89,40 @@ footer {
 .image-inline img,
 .image-section img {
   max-width: 100%;
-  height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   animation: fadeIn 1.5s ease;
+}
+.btn-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #357abd;
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+.btn-top:hover {
+  background: #2d5daa;
+}
+@media (max-width: 600px) {
+  nav a {
+    margin: 0 0.75rem;
+    font-size: 1rem;
+  }
+  header h1 {
+    font-size: 2.2rem;
+  }
+  section h2 {
+    font-size: 1.6rem;
+  }
 }
 @keyframes fadeIn {
   from {
@@ -114,23 +140,5 @@ footer {
   to {
     transform: translateY(0);
     opacity: 1;
-  }
-}
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 2rem;
-  }
-  header p {
-    font-size: 1rem;
-  }
-  nav a {
-    font-size: 1rem;
-    margin: 0.5rem;
-  }
-  section h2 {
-    font-size: 1.5rem;
-  }
-  .card {
-    padding: 1rem;
   }
 }
